@@ -33,12 +33,12 @@ function computeGrade(grades) {
 	let sum1=0;
 	let average;
 
-	for(let i=0;i<grades.lenght;i++){
+	for(let i=0;i<grades.length;i++){
 	sum1=sum1 + grades[i];
 		}
 		average=sum1/grades.length;
-		console.log(average);
-		console.log(sum1);
+		//console.log(average);
+		//console.log(sum1);
 	if(average>=90) {return "A";}
 	else if(average>=80) {return "B";}
 	else if(average>=70) {return "C";}
@@ -48,5 +48,5 @@ function computeGrade(grades) {
 	
 }
 
-console.log(computeGrade([90,90,90]));
+//console.log(computeGrade([90,90,90]));
 

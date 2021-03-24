@@ -37,11 +37,11 @@ function computeGrade(grades) {
 	sum=sum+grades[i];
 		}
 		average=sum/grades.length;
-	if(average>=90) return "A";
-	else if(average>=80)return "B";
-	else if(average>=70)return "C";
-	else if(average>=60)return "D";
-	else return "NC";
+	if(average>=90) {return "A";}
+	else if(average>=80) {return "B";}
+	else if(average>=70) {return "C";}
+	else if(average>=60){return "D";}
+	else {return "NC";}
 
 	
 }

@@ -31,12 +31,12 @@ function analyzer() {
 	let counter1 = 0;
 	for (let key in this){
 	if(typeof(this[key]) === "object"){
-	counter2++;
+	counter1++;
 	}
 	}
 	
 	
-	return {numProperties:count,cntShortName:count1,cntReference:count2}
+	return {numProperties:count,cntShortName:counter,cntReference:counter1}
    }
 
 

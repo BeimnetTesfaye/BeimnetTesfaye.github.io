@@ -12,32 +12,31 @@ Creates an object that contains the following information from the "this" object
 	cntReferences	// count of reference properties (use the typeof operator to compute this)
 }	
 */
-
-
 function analyzer() {
- 
-	let count = 0;
-	for(let pro in this){
-	count++;
-	}
+	let output = {};
+	let keysArray = Object.keys(this);
+	let valueArray = Object.values(this);
 	
-	let counter = 0;
-	for (let key in this){
-	if(key.length < 3){
-	counter++;
+	output.numProperties = keysArray.length;
+  
+	let countNum = 0;
+	for (let each of keysArray) {
+	  
+	  if (each.length < 3) countNum++;
 	}
-	
+	output.cntShortName = countNum;
+  
+	let countObj = 0;
+	for (let each of valueArray) {
+	  if (typeof each === "object") {
+		countObj++;
+	  }
 	}
-	let counter1 = 0;
-	for (let key in this){
-	if(typeof(this[key]) === "object"){
-	counter1++;
-	}
-	}
-	
-	
-	return {numProperties:count,cntShortName:counter,cntReference:counter1}
-   }
+	output.cntReference = countObj;
+  
+	return output;
+  }
+
 
 
 /* Constructor for a person object

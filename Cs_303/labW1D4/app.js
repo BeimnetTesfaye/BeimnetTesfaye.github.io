@@ -37,14 +37,6 @@ function sumPositiveNumbers(array) {
    return array.reduce(compare,0);
     }
 
-function sumPositiveNumbers(val) {
-    let biggert = val.reduce((acc, val)=>{
-        if(val > 0){
-        acc += val;
-        }return acc;
-    },0);
-    return biggert;
-}
 
 // Write a construction function
 // Input an array containing numbers and string, e.g. [1, "a", "c", 2, 4]

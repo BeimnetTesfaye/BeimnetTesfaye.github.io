@@ -17,30 +17,29 @@ Creates an object that contains the following information from the "this" object
 }	
 */
 function analyzer() {
-	//let person = new Person("bob", "usa", [100, 90]);
 
-	let outputObject = {};
+	let output = {};
 	let key = Object.keys(this);
 		
-	outputObject.numProperties=key.length;
+	output.numProperties=key.length;
 
 		let count = 0;
-		for (let elements of Object.keys(this)) {
+		for (let value of Object.keys(this)) {
 			
-			if (elements.length < 3)  count++;
+			if (value.length < 3)  count++;
 				
 			
 	}
-	outputObject.cntShortName = count;
-	// Let's count the values in the object
-		let countval = 0;
-		for (let element of Object.values(this)) {
-			if (typeof element==="object") {
-				countval++;
+	output.cntShortName = count;
+	
+		let countervalue = 0;
+		for (let value of Object.values(this)) {
+			if (typeof value==="object") {
+				countervalue++;
 			}
 		}
-	outputObject.cntReference=countval;
-	return outputObject;
+	output.cntReference=countervalue;
+	return output;
 	}
 	
 
@@ -63,10 +62,12 @@ function Person(name, country, grades) {
 	this.grades = grades;
 	this.computeGrade = function() {
 		let sum = 0;
-		for (let score of grades){
-			sum += score;
+		let average;
+		for (let value of grades){
+			sum += value;
 		}
-		return sum/grades.length;
+		average=sum/grades.length;
+		return average;
 			
 	}
 }
